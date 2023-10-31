@@ -31,15 +31,15 @@ Dataset yang saya gunakan berasal jadi Kaggle yang berisi Harga yang cocok untuk
 kaggle datasets download -d mohannapd/mobile-price-prediction 
 
 ### Variabel-variabel sebagai berikut:
-- Sale  : Penjualan Ponsel
-- weight    : Berat Ponsel
-- ppi       : Ukuran Resolusi Pada Layar Ponsel
-- cpu core  : Processor CPU
-- ram       : memori jangka pendek
-- Front_Cam : Kamera Depan
-- battery   : Penyimpan Daya Listrik
-- thickness : Ketebalan Ponsel
-- price     : Harga Ponsel
+- Sale  : Penjualan Ponsel(int64)
+- weight    : Berat Ponsel(int64)
+- ppi       : Ukuran Resolusi Pada Layar Ponsel(int64)
+- cpu core  : Processor CPU(int64)
+- ram       : memori jangka pendek(int64)
+- Front_Cam : Kamera Depan(int64)
+- battery   : Penyimpan Daya Listrik(int64)
+- thickness : Ketebalan Ponsel(int64)
+- price     : Harga Ponsel(int64)
 
 ## Data Preparation
 
@@ -64,6 +64,7 @@ df.info()
 ```python
 sns.heatmap(df.isnull())
 ```
+![image](ponsel)
 ```python
 df.describe()
 ```
@@ -82,7 +83,7 @@ df['weight'] = df['weight'].astype('int64')
 plt.figure(figsize=(10,8))
 sns.heatmap(df.corr(),annot=True)
 ```
-
+![image](ponse2)
 ```python
 Product_id = df.groupby('Product_id').count()[['ram']].sort_values(by='ram',ascending=True).reset_index()
 Product_id = Product_id.rename(columns={'ram':'numberOfmobile'})
@@ -92,18 +93,21 @@ fig = plt.figure(figsize=(16,5))
 sns.barplot(x=Product_id['Product_id'],y=Product_id['numberOfmobile'], color="green")
 plt.xticks(rotation=50)
 ```
-
+![image](ponse3)
 ```python
 df['ram'].value_counts().plot(kind='bar')
 ```
+![image](ponse4)
 ```python
 plt.figure(figsize=(15,5))
 sns.distplot(df['weight'])
 ```
+![image](ponse5)
 ```python
 plt.figure(figsize=(15,5))
 sns.distplot(df['Price'])
 ```
+![image](ponse6)
 - SELEKSI FITUR
 
 Menentukan Label dan Attribute

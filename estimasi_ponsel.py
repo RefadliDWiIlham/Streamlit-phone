@@ -5,7 +5,7 @@ model = pickle.load(open('estimasi_harga_ponsel.sav','rb'))
 
 st.title('ESTIMASI HARGA PONSEL')
 
-Sale = st.number_input('MASUKAN JUMLAH PENJUALAN')
+Sale = st.number_input('MASUKAN PENJUALAN')
 weight = st.number_input('MASUKAN BERAT')
 ppi = st.number_input('MASUKAN PPI')
 cpu_core = st.number_input('MASUKAN CPU CORE')

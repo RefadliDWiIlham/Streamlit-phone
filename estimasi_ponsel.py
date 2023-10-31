@@ -3,7 +3,7 @@ import streamlit as st
 
 model = pickle.load(open('estimasi_harga_ponsel.sav','rb'))
 
-st.title('ESTIMASI HARGA MOBIL MERC')
+st.title('ESTIMASI HARGA PONSEL')
 
 Sale = st.number_input('MASUKAN JUMLAH PENJUALAN')
 weight = st.number_input('MASUKAN BERAT')

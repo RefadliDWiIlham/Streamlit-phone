@@ -64,7 +64,7 @@ df.info()
 ```python
 sns.heatmap(df.isnull())
 ```
-![image](ponsel)
+![image](ponsel1.png)
 ```python
 df.describe()
 ```
@@ -83,7 +83,7 @@ df['weight'] = df['weight'].astype('int64')
 plt.figure(figsize=(10,8))
 sns.heatmap(df.corr(),annot=True)
 ```
-![image](ponse2)
+![image](ponsel2.png)
 ```python
 Product_id = df.groupby('Product_id').count()[['ram']].sort_values(by='ram',ascending=True).reset_index()
 Product_id = Product_id.rename(columns={'ram':'numberOfmobile'})
@@ -93,21 +93,21 @@ fig = plt.figure(figsize=(16,5))
 sns.barplot(x=Product_id['Product_id'],y=Product_id['numberOfmobile'], color="green")
 plt.xticks(rotation=50)
 ```
-![image](ponse3)
+![image](ponsel3.png)
 ```python
 df['ram'].value_counts().plot(kind='bar')
 ```
-![image](ponse4)
+![image](ponsel4.png)
 ```python
 plt.figure(figsize=(15,5))
 sns.distplot(df['weight'])
 ```
-![image](ponse5)
+![image](ponsel5.png)
 ```python
 plt.figure(figsize=(15,5))
 sns.distplot(df['Price'])
 ```
-![image](ponse6)
+![image](ponsel6.png)
 - SELEKSI FITUR
 
 Menentukan Label dan Attribute
